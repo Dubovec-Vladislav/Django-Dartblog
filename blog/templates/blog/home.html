@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load posts %}
+
+{% block title %}{{ title }} :: {{ block.super }}{% endblock %}
+
+{% block content %}
+
+{% include 'templatetags_templates/main_tpl.html' %}
+{% get_stationary_post %}
+{% show_posts cnt=page_obj.object_list %}
+
+{% endblock %}
